@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.validation.Valid;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 
@@ -28,6 +29,9 @@ public class PersonDTO implements Serializable {
     @Max(value = 125, message = "enter a valid age")
     @Positive(message = "age must be a positive number")
     private Integer age;
+
+    @Valid
+    private AddressDTO addressDTO;
 
     public PersonDTO(String name, String lastName, Integer age) {
         this.name = name;
