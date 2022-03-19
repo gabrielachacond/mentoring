@@ -25,13 +25,13 @@ public class PersonDTO implements Serializable {
     @Size(max = 50, message = "maximum characters is 50")
     private String lastName;
 
-    @NotEmpty(message = "age is required")
+    @NotNull(message = "age is required")
     @Max(value = 125, message = "enter a valid age")
     @Positive(message = "age must be a positive number")
     private Integer age;
 
     @Valid
-    private AddressDTO addressDTO;
+    private AddressDTO address;
 
     public PersonDTO(String name, String lastName, Integer age) {
         this.name = name;

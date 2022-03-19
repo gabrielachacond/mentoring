@@ -2,18 +2,20 @@ package com.ibm.geno.api.mentoring.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @JsonPropertyOrder({"id", "street", "number", "floor", "department", "city", "province", "country"})
 public class AddressDTO implements Serializable {
-
 
     private Long id;
 
@@ -21,10 +23,10 @@ public class AddressDTO implements Serializable {
     @Size(max = 200, message = "maximum characters is 200")
     private String street;
 
-    @NotEmpty(message = "number is required")
+    @NotNull(message = "number is required")
     private Integer number;
 
-    @NotEmpty(message = "floor is required")
+    @NotNull(message = "floor is required")
     private Integer floor;
 
     @NotBlank(message = "department is required")
