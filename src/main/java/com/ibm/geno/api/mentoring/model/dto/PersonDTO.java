@@ -12,10 +12,13 @@ import java.io.Serializable;
 @Getter
 @Setter
 @NoArgsConstructor
-@JsonPropertyOrder({"id", "name", "lastName", "age"})
+@JsonPropertyOrder({"id","name", "lastName", "age"})
 public class PersonDTO implements Serializable {
 
     private Long id;
+
+    @NotNull(message = "dni is required")
+    private Integer dni;
 
     @NotBlank(message = "name is required")
     @Size(max = 50, message = "maximum characters is 50")
