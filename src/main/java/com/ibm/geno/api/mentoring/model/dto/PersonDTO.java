@@ -21,7 +21,7 @@ public class PersonDTO implements Serializable {
     @Size(max = 50, message = "maximum characters is 50")
     private String name;
 
-    @NotBlank(message = "last Name is required")
+    @NotBlank(message = "lastName is required")
     @Size(max = 50, message = "maximum characters is 50")
     private String lastName;
 
@@ -31,18 +31,6 @@ public class PersonDTO implements Serializable {
     private Integer age;
 
     @Valid
+    @NotNull(message = "address is required")
     private AddressDTO address;
-
-    public PersonDTO(String name, String lastName, Integer age) {
-        this.name = name;
-        this.lastName = lastName;
-        this.age = age;
-    }
-
-    public PersonDTO(Long id, String name, String lastName, Integer age) {
-        this.id = id;
-        this.name = name;
-        this.lastName = lastName;
-        this.age = age;
-    }
 }

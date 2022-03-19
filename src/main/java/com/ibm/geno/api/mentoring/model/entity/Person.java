@@ -30,14 +30,4 @@ public class Person implements Serializable {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
-
-    public Person(String name, String lastName, Integer age) {
-        this.name = name;
-        this.lastName = lastName;
-        this.age = age;
-    }
-
-    public Person(Long id) {
-        this.id = id;
-    }
 }
