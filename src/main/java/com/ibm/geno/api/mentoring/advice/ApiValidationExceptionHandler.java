@@ -37,7 +37,7 @@ public class ApiValidationExceptionHandler extends ResponseEntityExceptionHandle
                 )
                 .collect(Collectors.toList());
 
-        ApiErrorsResponseBody apiErrorsResponseBody = new ApiErrorsResponseBody<ApiFieldError>(
+        ApiErrorsResponseBody<ApiFieldError> apiErrorsResponseBody = new ApiErrorsResponseBody<ApiFieldError>(
                 HttpStatus.BAD_REQUEST.value(),
                 HttpStatus.BAD_REQUEST.getReasonPhrase(),
                 apiFieldErrors);

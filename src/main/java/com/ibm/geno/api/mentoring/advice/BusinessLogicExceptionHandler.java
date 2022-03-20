@@ -21,7 +21,7 @@ public class BusinessLogicExceptionHandler {
                 e.getHttpStatus() :
                 INTERNAL_SERVER_ERROR;
 
-        ApiErrorsResponseBody apiErrorsResponseBody = new ApiErrorsResponseBody<ApiEntityError>(
+        ApiErrorsResponseBody<ApiEntityError> apiErrorsResponseBody = new ApiErrorsResponseBody<ApiEntityError>(
                 httpStatus.value(),
                 httpStatus.getReasonPhrase(),
                 e.getEntityErrors());

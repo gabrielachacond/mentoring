@@ -18,7 +18,7 @@ public class Person implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     private Integer dni;
 
     @Column(nullable = false, length = 50)

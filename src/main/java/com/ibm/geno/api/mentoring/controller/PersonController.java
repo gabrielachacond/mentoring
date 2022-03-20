@@ -26,8 +26,8 @@ public class PersonController {
 
         PersonDTO save = personServices.save(personDTO);
         return ResponseEntity
-                .created(new URI("/person/" + personDTO.getId()))
-                .body(personDTO);
+                .created(new URI("/person/" + save.getId()))
+                .body(save);
     }
 
 
