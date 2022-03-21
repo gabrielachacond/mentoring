@@ -18,6 +18,9 @@ public class Person implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true, nullable = false)
+    private Integer dni;
+
     @Column(nullable = false, length = 50)
     private String name;
 
@@ -30,14 +33,4 @@ public class Person implements Serializable {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private Address address;
-
-    public Person(String name, String lastName, Integer age) {
-        this.name = name;
-        this.lastName = lastName;
-        this.age = age;
-    }
-
-    public Person(Long id) {
-        this.id = id;
-    }
 }
