@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component("businessLogicExceptionComponent")
 public class BusinessLogicExceptionComponent {
 
-    public RuntimeException throwExceptionEntityNotFound(String entityName, Long id) {
+    public RuntimeException getExceptionEntityNotFound(String entityName, Long id) {
         ApiEntityError apiEntityError = new ApiEntityError(
                 entityName,
                 "NotFound",
@@ -25,7 +25,7 @@ public class BusinessLogicExceptionComponent {
 
     public RuntimeException getExceptionPersonAlreadyExists(Person person) {
         ApiEntityError apiEntityError = new ApiEntityError(
-                "CourseApplication",
+                "Person",
                 "AlreadyExists",
                 "Person already exists with dni number " + person.getDni()
         );
